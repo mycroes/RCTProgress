@@ -1,7 +1,7 @@
 using Xunit;
 using Shouldly;
 
-namespace RCTProgress.Tests;
+namespace RCTProgress.Lib.Tests;
 
 public class RunLengthEncodingTests
 {

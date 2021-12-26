@@ -1,7 +1,7 @@
 ﻿using System.Buffers;
 using System.Buffers.Binary;
 using System.Text;
-using RCTProgress;
+using RCTProgress.Lib;
 
 var pool = MemoryPool<byte>.Shared;
 using var file = File.OpenRead(args[0]);

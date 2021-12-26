@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\RCTProgress.csproj" />
+    <ProjectReference Include="..\..\src\Lib\RCTProgress.Lib.csproj" />
   </ItemGroup>
 
 </Project>

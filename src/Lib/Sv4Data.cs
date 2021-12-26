@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace RCTProgress;
+namespace RCTProgress.Lib;
 
 internal class Sv4Data
 {

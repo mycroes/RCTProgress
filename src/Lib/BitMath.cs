@@ -1,4 +1,4 @@
-namespace RCTProgress;
+namespace RCTProgress.Lib;
 
 public static class BitMath
 {
