@@ -35,12 +35,18 @@
 
             <Label Grid.Column="3" Grid.Row="0">Scenario file size</Label>
             <Label Grid.Column="3" Grid.Row="1" x:Name="ScenarioFileSize" />
+
+            <Label Grid.Column="4" Grid.Row="0">Mega park hash</Label>
+            <Label Grid.Column="4" Grid.Row="1" x:Name="MegaParkHash" />
+
+            <Label Grid.Column="5" Grid.Row="0">Number of scenarios</Label>
+            <Label Grid.Column="5" Grid.Row="1" x:Name="NumScenarios" />
           </Grid>
 
           <DataGrid x:Name="Scenarios" AutoGenerateColumns="False" HorizontalAlignment="Stretch">
             <DataGrid.Columns>
-              <DataGridTextColumn Header="Name" Binding="{Binding Name}" MinWidth="150" />
-              <DataGridTextColumn Header="Filename" Binding="{Binding FileName}" MinWidth="120" />
+              <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" MinWidth="150" />
+              <DataGridTextColumn Header="Filename" Binding="{Binding FileName}" IsReadOnly="True" MinWidth="120" />
               <DataGridTextColumn Header="Winner" Binding="{Binding Winner}" MinWidth="200" />
               <DataGridTextColumn Header="CompanyValue" Binding="{Binding CompanyValue}" MinWidth="120" />
               <DataGridCheckBoxColumn Header="Available" Binding="{Binding Available}" MinWidth="40" />

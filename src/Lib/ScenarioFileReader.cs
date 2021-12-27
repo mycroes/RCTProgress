@@ -25,8 +25,8 @@ public class ScenarioFileReader
         Sv4Data.Decrypt(decoded);
 
         var numScenarios = decoded.Span[ScenarioCountOffset];
-        var scenarios = new List<Scenario>(numScenarios);
-        for (var i = 0; i < numScenarios; i++)
+        var scenarios = new List<Scenario>(128);
+        for (var i = 0; i < 128; i++)
         {
             var filename = Encoding.ASCII.GetString(decoded.Span.Slice(i * 16, 16));
             var name = Encoding.ASCII.GetString(decoded.Span.Slice(0x0800 + i * 64, 64));
@@ -44,10 +44,12 @@ public class ScenarioFileReader
             });
         }
 
+        var megaParkHash = decoded.Span.Slice(0x2a0 + 21 * 32, 32).ToArray();
+
         var flag = decoded.Span[FlagOffset];
         var css1TimeRef = BinaryPrimitives.ReadUInt16LittleEndian(decoded[Css1TimeRefOffset..].Span);
         var scenarioFileSize = BinaryPrimitives.ReadInt64LittleEndian(decoded[ScenarioFileSizeOffset..].Span);
         
-        return new ScenarioFile(scenarios, flag, css1TimeRef, checksum, scenarioFileSize);
+        return new ScenarioFile(scenarios, numScenarios, megaParkHash, flag, css1TimeRef, checksum, scenarioFileSize);
     }
 }

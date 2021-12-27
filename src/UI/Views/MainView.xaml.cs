@@ -10,8 +10,9 @@ public partial class MainView
 
         this.WhenActivated(d =>
         {
-            d(ViewModel.SelectFile.RegisterHandler(SelectFile));
+            d(ViewModel!.SelectFile.RegisterHandler(SelectFile));
             d(this.BindCommand(ViewModel, vm => vm.OpenFileCommand, v => v.OpenMenuItem));
+            d(this.BindCommand(ViewModel, vm => vm.SaveFileCommand, v => v.SaveMenuItem));
             d(this.OneWayBind(ViewModel, vm => vm.File, v => v.File.ViewModel));
         });
     }

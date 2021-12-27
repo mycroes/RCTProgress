@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Reactive.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using RCTProgress.UI.ViewModels;
 

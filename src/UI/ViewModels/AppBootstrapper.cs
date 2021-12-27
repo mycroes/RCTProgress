@@ -13,8 +13,11 @@ public class AppBootstrapper : ReactiveObject, IScreen
 
         RegisterParts(resolver, mutableResolver);
 
-        Router.Navigate.Execute(resolver.GetService<MainViewModel>()).Subscribe();
+        MainViewModel = resolver.GetService<MainViewModel>();
+        Router.Navigate.Execute(MainViewModel).Subscribe();
     }
+
+    public MainViewModel MainViewModel { get; }
 
     /// <inheritdoc />
     public RoutingState Router { get; }
