@@ -9,7 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Using Include="RCTProgress.Lib" />
+    <Using Include="ReactiveUI" />
+    <using Include="System.Reactive" />
+    <Using Include="System.Windows.Input" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="ReactiveUI.WPF" Version="17.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\RCTProgress.Lib.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
 using RCTProgress.UI.Views;
-using ReactiveUI;
 using Splat;
 
 namespace RCTProgress.UI.ViewModels;
@@ -29,5 +28,6 @@ public class AppBootstrapper : ReactiveObject, IScreen
         mutableResolver.Register<MainViewModel>(() => new MainViewModel(resolver.GetService<IScreen>()));
 
         mutableResolver.Register<IViewFor<MainViewModel>>(() => new MainView());
+        mutableResolver.Register<IViewFor<FileViewModel>>(() => new FileView());
     }
 }

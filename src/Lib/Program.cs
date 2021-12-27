@@ -29,7 +29,7 @@ for (var i = 0; i < numScenarios; i++)
 
     scenarios.Add(new Scenario
     {
-        Filename = filename,
+        FileName = filename,
         CompanyValue = value,
         Name = name,
         Winner = winner,
@@ -39,7 +39,7 @@ for (var i = 0; i < numScenarios; i++)
 
 foreach (var sc in scenarios)
 {
-    Console.WriteLine($"{sc.Filename}\t{sc.Name}\t{sc.CompanyValue}\t{sc.Winner}\t{sc.Available}");
+    Console.WriteLine($"{sc.FileName}\t{sc.Name}\t{sc.CompanyValue}\t{sc.Winner}\t{sc.Available}");
 }
 
 var checksum = Checksums.Calculate(input.Memory[..len][..^4].Span);
